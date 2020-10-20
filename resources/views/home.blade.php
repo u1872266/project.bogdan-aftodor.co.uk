@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">Explore</div>
+                
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,13 +19,39 @@
                     <?php
                         foreach ($Cities as $City): ?>
 
-                        <p>{{$City->name}}</p>
+                        <p>{{$City->city_name}}</p>
 
-                    <a href="{{ route('city',array('id'=>$City->id)) }}"><img src="{{ url($City->images) }}" alt="" style="min-width:100%"></a>
-                    
+                   <img src="{{ url($City->images) }}" alt="" style="min-width:100%">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary">View</a>
+                        <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary">Edit</a>
 
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#areyousure">
+                            Delete
+                        </button>
 
+                        <div class="modal fade" id="areyousure" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
+                                    <form action="{{ route('cities.destroy',['id'=>$City->id]) }}" method="POST">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <input type="submit" class="btn btn-danger" value="Yes, Delete!">
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     <?php
                         endforeach;
                     ?>

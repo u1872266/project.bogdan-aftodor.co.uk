@@ -27,8 +27,29 @@ class HomeController extends Controller
         return view('home', compact('Cities'));
     }
 
-    public function showCity($id){
-        $City = Cities::find($id);
+    public function show($id){
+        $CityModel = new Cities;
+        $City = $CityModel->findWithUserUpdates($id);
         return view('showCity', compact('City'));
+    }
+
+    public function edit($id){
+        $CityModel = new Cities;
+        $City = $CityModel->findWithUserUpdates($id);
+        return view('showCity', compact('City'));
+    }
+
+    public function update(Request $request,$id){
+        $City = Cities::find($id);
+        $City->text = $request->text;
+        $City->updated_by = \Auth::user()->id;
+        $City->save();
+        return redirect(route('cities.show',['id'=>$id]));
+    }
+
+    public function destroy($id){
+        $City = Cities::find($id);
+        $City->delete();
+        return redirect(route('home'));
     }
 }
