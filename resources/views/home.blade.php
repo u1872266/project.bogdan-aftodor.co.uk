@@ -23,10 +23,11 @@
 
                    <img src="{{ url($City->images) }}" alt="" style="min-width:100%">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary">View</a>
-                        <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary">Edit</a>
+                        <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-search"></i>View</a>
+                        <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-edit"></i>Edit</a>
 
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#areyousure">
+                        <i class="fas fa-trash-restore-alt"></i>
                             Delete
                         </button>
 
