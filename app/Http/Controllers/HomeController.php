@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cities;
+use Storage;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -51,5 +53,23 @@ class HomeController extends Controller
         $City = Cities::find($id);
         $City->delete();
         return redirect(route('home'));
+    }
+
+    public function create(){
+        return view('addingCity');
+    }
+
+    public function store(Request $request){
+        $newCity = new Cities;
+        $newCity->city_name = $request->city_name;
+        $newCity->text = $request->text;
+
+        $img = $request->file('city_image')->store(null,'images');
+
+        $newCity->images = $img;
+        $newCity->updated_by = Auth::user()->id;
+        $newCity->save();
+
+        return redirect(route('cities.index'));
     }
 }

@@ -39,10 +39,10 @@
                                 <p>{{ $City->text }}</p>
                             <?php
                                 endif;
-                            ?>
+                            ?>                 
                         </div>
-                        <div class="col-6">
-                            <img src="{{ url($City->images) }}" alt="" style="min-width:100%">
+                        <div class="col-8">
+                            <img src="{{ url('images/'.$City->images) }}" alt="" style="min-width:100%">
                         </div>
                     </div>
                     

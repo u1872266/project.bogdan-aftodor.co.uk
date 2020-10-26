@@ -19,5 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::resource('cities', HomeController::class);
 // Route::get('/cities/{id}', 'HomeController@showCity')->name('city');
