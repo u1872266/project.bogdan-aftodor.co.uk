@@ -24,7 +24,7 @@
 
                         <p>{{$City->city_name}}</p>
 
-                   <img src="{{ url('images/'.$City->images) }}" alt="" style="min-width:100%">
+                   <img src="{{ url('images/'.$City->images) }}" alt="" class="img-fluid" style="min-width:100%">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-search"></i></a>
                         <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
@@ -65,4 +65,17 @@
         </div>
     </div>
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© Bogdan Aftodor References:
+    <a href="https://pxhere.com/" target="_blank"> Images</a>
+    <a href="https://en.wikipedia.org/wiki/Main_Page" target="-blank"> Wikipedia</a>
+    <a href="https://fontawesome.com/" target="-blank"> Css-Icons</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 @endsection
