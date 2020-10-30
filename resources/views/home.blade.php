@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                 Explore
-                <a href="{{ route('cities.create') }}" class="btn btn-sm btn-success float-right">+</a>
+                <a href="{{ route('cities.create') }}" class="btn float-right">Add City</a>
                 </div>
                 
 
@@ -26,12 +26,12 @@
 
                    <img src="{{ url('images/'.$City->images) }}" alt="" style="min-width:100%">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-search"></i>View</a>
-                        <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-edit"></i>Edit</a>
+                        <a href="{{ route('cities.show',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-search"></i></a>
+                        <a href="{{ route('cities.edit',array('id'=>$City->id)) }}" type="button" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
 
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#areyousure-{{ $City->id }}">
                         <i class="fas fa-trash-restore-alt"></i>
-                            Delete
+                            
                         </button>
 
                         <div class="modal fade" id="areyousure-{{ $City->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
