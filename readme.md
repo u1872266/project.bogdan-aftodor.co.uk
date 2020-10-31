@@ -20,32 +20,27 @@ The purpose of my project is to build up a friendly online community were users 
 ![Example screenshot](./img/screenshot.png)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Laravel 5.4
+* Bootstrap
+* PHP
 
 ## Setup
 http://project.bogdan-aftodor.co.uk/ access the link and register in order to access the features.
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
 
-## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+## CRUD Features
+* User is able to View
+* User once registered is able to Edit
+* User is able to Delete
+* User is able to Add
 
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+
+
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
+Project is: _in progress_, new features and functionalities to be added further
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Project was inspired by my travels and during the ongoing pandemic all my travels for 2020 were cancelled.
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@flynerdpl](http://www.bogdan-aftodor.co.uk/) - feel free to contact me!
